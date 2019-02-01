@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <custombanner translate="title" module="custombanner">
+                                        <title>Custom Banner</title>
+                                        <sort_order>100</sort_order>
+                                    </custombanner>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+					<custombanner module="custombanner">
+						<title>Custom Banner</title>
+							<sort_order>75</sort_order>
+						<children>
+							<custombanner module="custombanner">
+								<title>Manage Custom Banner</title>
+								<sort_order>0</sort_order>
+							</custombanner>
+							<custombannergroup module="custombanner">
+								<title>Manage Custom Banner Groups</title>
+								<sort_order>1</sort_order>
+							</custombannergroup>
+						</children>
+					</custombanner>
+                 </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
