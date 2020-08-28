@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+ 
+<config>
+    <modules>
+        <Mangoit_CategoryReviews>
+            <version>0.1.4</version>
+        </Mangoit_CategoryReviews>
+    </modules>
+ 
+    <global>
+        <models>
+            <categoryreviews>
+                <class>Mangoit_CategoryReviews_Model</class>
+                <resourceModel>categoryreviews_resource</resourceModel>
+            </categoryreviews>
+            <catalog>
+                <rewrite>
+                    <category_attribute_backend_image>Mangoit_CategoryReviews_Model_Category_Attribute_Backend_Image</category_attribute_backend_image>
+                </rewrite>
+                <rewrite>
+                    <file_validator_image>Mangoit_CategoryReviews_Model_File_Validator_Image</file_validator_image>
+                </rewrite>
+            </catalog>
+            <categoryreviews_resource>
+                <class>Mangoit_CategoryReviews_Model_Resource</class>
+                <entities>
+                    <categoryreviews>
+                        <table>category_reviews</table>
+                    </categoryreviews>
+                </entities>
+            </categoryreviews_resource>
+        </models>
+ 
+        <resources>
+            <categoryreviews_setup>
+                <setup>
+                    <module>Mangoit_CategoryReviews</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </categoryreviews_setup>
+            <categoryreviews_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </categoryreviews_write>
+            <categoryreviews_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </categoryreviews_read>
+        </resources>
+ 
+        <blocks>
+            <categoryreviews>
+                <class>Mangoit_CategoryReviews_Block</class>
+            </categoryreviews>
+        </blocks>
+ 
+        <helpers>
+            <categoryreviews>
+                <class>Mangoit_CategoryReviews_Helper</class>
+            </categoryreviews>
+        </helpers>
+    </global>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <categoryreviews>
+                    <file>categoryreviews.xml</file>
+                </categoryreviews>
+            </updates>
+        </layout>
+    </adminhtml>
+    
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Mangoit_CategoryReviews after="Mage_Adminhtml">Mangoit_CategoryReviews_Adminhtml</Mangoit_CategoryReviews>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>
